@@ -8,9 +8,16 @@ import random, string
 password = []
 
 
+def getLength():
+    
+    length = int(input("How long would you like the password to be? (Enter integer) "))
+    return length
+
+
+
 def main():
 
-    length = int(input("How long would you like the password to be? (Enter integer) "))
+    length = getLength()
 
     while len(password) < length:
         char = random.choice(string.ascii_letters)
