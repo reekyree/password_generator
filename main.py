@@ -14,17 +14,24 @@ def getLength():
     return length
 
 
+def createPass(password, length):
+    while len(password) < length:
+        char = random.choice(string.ascii_letters)
+        password.append(char)
+
+
+def displayPass(password):
+    for char in password:
+        print(char, end='')
+
 
 def main():
 
     length = getLength()
 
-    while len(password) < length:
-        char = random.choice(string.ascii_letters)
-        password.append(char)
+    createPass(password, length)
 
-    for char in password:
-        print(char, end='')
+    displayPass(password)
 
 
 if __name__ == "__main__":
