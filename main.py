@@ -7,12 +7,22 @@ import random, string
 from random import shuffle # This lets you randomize a list
 
 password = []
-
+nums = False
 
 def getLength():
     
     length = int(input("How long would you like the password to be? (Enter integer) "))
     return length
+
+def addNums(nums, password):
+    addNums = input("Do you want to add numbers to the password? (y/n) ")
+    if addNums.lower() == "y":
+        nums = True
+    else:
+        nums = False
+
+    if nums == True:
+        password.append(random.randint(0, 9))
 
 
 def createPass(password, length):
@@ -28,13 +38,13 @@ def displayPass(password):
         print(char, end='')
 
 
-
-
 def main():
 
     length = getLength()
 
     createPass(password, length)
+
+    addNums(nums, password)
 
     displayPass(password)
 
