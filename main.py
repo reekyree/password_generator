@@ -10,13 +10,16 @@ password = []
 nums = False
 
 def getLength():
-    
+    # Get the password length.
+
     length = int(input("How long would you like the password to be? (Enter integer) "))
     return length
 
 def addNums(nums, password):
+    
     addNums = input("Do you want to add numbers to the password? (y/n) ")
     if addNums.lower() == "y":
+        amount = int(input("How many numbers do you want? "))
         nums = True
     else:
         nums = False
