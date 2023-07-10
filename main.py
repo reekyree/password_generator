@@ -36,7 +36,8 @@ def createPass(password, length):
         char = random.choice(string.ascii_letters)
         password.append(char)
 
-    # Add code to pick and add random numbers to the list that becomes the password.
+def shufflePass(password):
+    random.shuffle(password)
 
 
 def displayPass(password):
@@ -52,8 +53,11 @@ def main():
 
     addNums(nums, password)
 
+    shufflePass(password)
+
     displayPass(password)
 
 
 if __name__ == "__main__":
     main()
+    
