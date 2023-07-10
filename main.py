@@ -12,11 +12,12 @@ nums = False
 def getLength():
     # Get the password length.
 
-    length = int(input("How long would you like the password to be? (Enter integer) "))
+    length = int(input("How many alphabetic characters would you like? (Enter a number) "))
     return length
 
 def addNums(nums, password):
     
+    counter = 0
     addNums = input("Do you want to add numbers to the password? (y/n) ")
     if addNums.lower() == "y":
         amount = int(input("How many numbers do you want? "))
@@ -25,7 +26,9 @@ def addNums(nums, password):
         nums = False
 
     if nums == True:
-        password.append(random.randint(0, 9))
+        while counter < amount:
+            password.append(random.randint(0, 9))
+            counter += 1
 
 
 def createPass(password, length):
