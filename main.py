@@ -1,6 +1,6 @@
 # This program generates a password
-# using upper and lowercase letters.
-# The user can specify the number of characters.
+# using alphanumeric characters.
+# The user can specify the number of characters used.
 
 
 import random, string
@@ -16,7 +16,8 @@ def getLength():
     return length
 
 def addNums(nums, password):
-    
+    # Add numeric characters if the user chooses 'yes.'
+
     counter = 0
     addNums = input("Do you want to add numbers to the password? (y/n) ")
     if addNums.lower() == "y":
@@ -32,15 +33,19 @@ def addNums(nums, password):
 
 
 def createPass(password, length):
+    # Create a password based on the length entered by the user.
+
     while len(password) < length:
         char = random.choice(string.ascii_letters)
         password.append(char)
 
 def shufflePass(password):
+    # Randomize the password.
     random.shuffle(password)
 
 
 def displayPass(password):
+    # Display the password in a non-list format.
     for char in password:
         print(char, end='')
 
