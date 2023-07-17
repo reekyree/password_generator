@@ -15,10 +15,9 @@ def getLength():
     return length
 
 def addNums(password):
-    # Add numeric characters if the user chooses 'yes.'
-
     # Counter provides a stopping point to make sure the
     # password stays within the specified number range.
+    
     counter = 0
     addNums = int(input("Enter the minimum number of numeric characters for the password (0 if none): "))
     if addNums > 0:
@@ -47,6 +46,7 @@ def createPass(password, length):
     while len(password) < length:
         char = random.choice(string.ascii_letters)
         password.append(char)
+
 
 def shufflePass(password):
     # Randomize the password.
