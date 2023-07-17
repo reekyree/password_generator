@@ -33,12 +33,17 @@ def addNums(nums, password):
             password.append(random.randint(0, 9))
             counter += 1
 
-def addSpecial():
+def addSpecial(password):
 
     counter = 0
-    addSpecial = input("Enter the minimum number of special characters for the password (0 if none): ")
+    addSpecial = int(input("Enter the minimum number of special characters for the password (0 if none): "))
     if addSpecial > 0:
-        special = random.choice(string.punctuation)
+        while counter < addSpecial:
+            special = random.choice(string.punctuation)
+            password.append(special)
+            counter += 1
+    else:
+        print("You are adding (0) special characters.")
 
 
 def createPass(password, length):
@@ -66,6 +71,8 @@ def main():
     createPass(password, length)
 
     addNums(nums, password)
+
+    addSpecial(password)
 
     shufflePass(password)
 
