@@ -18,6 +18,8 @@ def getLength():
 def addNums(nums, password):
     # Add numeric characters if the user chooses 'yes.'
 
+    # Counter provides a stopping point to make sure the
+    # password stays within the specified number range.
     counter = 0
     addNums = input("Do you want to add numbers to the password? (y/n) ")
     if addNums.lower() == "y":
@@ -30,6 +32,7 @@ def addNums(nums, password):
         while counter < amount:
             password.append(random.randint(0, 9))
             counter += 1
+
 
 
 def createPass(password, length):
