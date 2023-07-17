@@ -7,7 +7,6 @@ import random, string
 from random import shuffle # This lets you randomize a list
 
 password = []
-nums = False
 
 def getLength():
     # Get the password length.
@@ -15,23 +14,19 @@ def getLength():
     length = int(input("How many alphabetic characters would you like? (Enter a number) "))
     return length
 
-def addNums(nums, password):
+def addNums(password):
     # Add numeric characters if the user chooses 'yes.'
 
     # Counter provides a stopping point to make sure the
     # password stays within the specified number range.
     counter = 0
-    addNums = input("Do you want to add numbers to the password? (y/n) ")
-    if addNums.lower() == "y":
-        amount = int(input("How many numbers do you want? "))
-        nums = True
-    else:
-        nums = False
-
-    if nums == True:
-        while counter < amount:
+    addNums = int(input("Enter the minimum number of numeric characters for the password (0 if none): "))
+    if addNums > 0:
+        while counter < addNums:
             password.append(random.randint(0, 9))
             counter += 1
+    else:
+        print("You are adding (0) numbers.")
 
 def addSpecial(password):
 
@@ -70,7 +65,7 @@ def main():
 
     createPass(password, length)
 
-    addNums(nums, password)
+    addNums(password)
 
     addSpecial(password)
 
