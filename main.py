@@ -11,6 +11,8 @@ password = []
 def getLength():
     # Get the password length.
 
+    # NOTE: Add a password length function that accepts ints, and handle errors for 0 and non int.
+
     length = int(input("How many alphabetic characters would you like? (Enter a number) "))
     return length
 
@@ -19,7 +21,7 @@ def addNums(password):
     # password stays within the specified number range.
     
     counter = 0
-    addNums = int(input("Enter the minimum number of numeric characters for the password (0 if none): "))
+    addNums = int(input("Min. # of integers (0 if none): "))
     if addNums > 0:
         while counter < addNums:
             password.append(random.randint(0, 9))
@@ -30,7 +32,7 @@ def addNums(password):
 def addSpecial(password):
 
     counter = 0
-    addSpecial = int(input("Enter the minimum number of special characters for the password (0 if none): "))
+    addSpecial = int(input("Min. # of special characters (0 if none): "))
     if addSpecial > 0:
         while counter < addSpecial:
             special = random.choice(string.punctuation)
