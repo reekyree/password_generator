@@ -13,7 +13,7 @@ def getLength():
 
     # NOTE: Add a password length function that accepts ints, and handle errors for 0 and non int.
 
-    length = int(input("How many alphabetic characters would you like? (Enter a number) "))
+    length = int(input("How many letters would you like? (Enter a number) "))
     return length
 
 def addNums(password):
