@@ -8,7 +8,7 @@ from random import shuffle # This lets you randomize a list
 
 password = []
 
-def getLength():
+def getAlpha():
     # Get the password length.
 
     # NOTE: Add a password length function that accepts ints, and handle errors for 0 and non int.
@@ -63,7 +63,7 @@ def displayPass(password):
 
 def main():
 
-    length = getLength()
+    length = getAlpha()
 
     createPass(password, length)
 
